@@ -24,16 +24,16 @@ function qtest(string) {
 
 function qword(string) {
   var match = /qu/.exec(string);
-  var string = string.split('');
+  var stringA = string.split('');
   var punctuation = '';
   if(if_punctuation(string)) {
     punctuation = if_punctuation(string);
-    string.pop();
+    stringA.pop();
   }
   var indexes = [];
   indexes.push(match.index);
-  var array = string.slice(0,(match.index + 2));
-  var newarray = string.slice(match.index + 2,string.length);
+  var array = stringA.slice(0,(match.index + 2));
+  var newarray = stringA.slice(match.index + 2,string.length);
   newarray = newarray.concat(array);
   var final = newarray.join('') + 'ay' + punctuation;
   return final;
